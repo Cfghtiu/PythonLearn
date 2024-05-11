@@ -3,6 +3,9 @@ from typing import Union, Optional, Generator
 import qianfan
 
 
+# 文心一言没有定义异常类，因为我不想登录千帆平台看文档了
+
+
 class YiYan:
     """文心一言对话类"""
     def __init__(
