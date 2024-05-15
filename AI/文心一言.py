@@ -3,7 +3,7 @@ from typing import Union, Optional, Generator
 import qianfan
 
 
-# 文心一言没有定义异常类，因为我不想登录千帆平台看文档了
+# 文心一言没有定义异常类，因为qianfan模块会自己抛出异常
 
 
 class YiYan:
