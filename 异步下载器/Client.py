@@ -37,7 +37,7 @@ class Client(Window):
         self.update_progress_bar_timer_id = self.startTimer(120)
 
     def start_download(self, options: Options):
-        client = AsyncClient(proxies=options.proxy or None)
+        client = AsyncClient(proxies=options.proxy or None, timeout=50, verify=False)
         downloader = Downloader(loop=self.loop, http_client=client)
         self.downloader_map[options] = downloader
         asyncio.run_coroutine_threadsafe(self.start_and_monitor(downloader, options), self.loop)
@@ -53,9 +53,9 @@ class Client(Window):
         options.failed = False
         try:
             async with downloader:
-                options.file_size = await downloader.get_content_length_async(options.url)
+                options.file_size = await downloader.get_content_length_async(options.url, follow_redirects=True)
                 async with aiofiles.open(path, "wb") as file:
-                    async for chunk, offset, length in downloader.download_async(options.url):
+                    async for chunk, offset, length in downloader.download_async(options.url, follow_redirects=True):
                         await file.seek(offset)
                         await file.write(chunk)
                         options.download_size += length

@@ -141,7 +141,7 @@ class Downloader:
         assert "Range" not in headers, ValueError("Range header is not allowed")
         content_length = await self.get_content_length_async(url, **kwargs)
         if content_length == 0:
-            async for value in self._download(url, None):
+            async for value in self._download(url, None, **kwargs):
                 if value is None:
                     return
                 yield value
@@ -167,7 +167,7 @@ class Downloader:
             start = i * content_length // worker_count
             end = (i + 1) * content_length // worker_count
             range_ = (start, end-1)
-            task = asyncio.create_task(enqueue(self._download(url, range_)))
+            task = asyncio.create_task(enqueue(self._download(url, range_, **kwargs)))
             tasks.append(task)
         # 等待所有异步下载任务完成
         over_count = 0
@@ -199,7 +199,7 @@ class Downloader:
             headers["Range"] = f"bytes={range_[0]}-{range_[1]}"
             offset = range_[0]
         async with self.http_client.stream("GET", url, **kwargs) as response:
-            async for chunk in response.aiter_bytes(1024 * 1024):
+            async for chunk in response.aiter_bytes(1024):
                 length = len(chunk)
                 yield chunk, offset, length
                 offset += length
