@@ -91,7 +91,7 @@ with (sd.InputStream(samplerate=44100, channels=1) as inp,
     while True:
         # inp.read返回(data,overflowed)，overflowed为True表示缓冲区溢出了
         # 在长时间不读取时就会溢出，所以要及时处理
-        data, _ = inp.read(int(44100*0.1))  # 读取10毫秒数据
+        data, _ = inp.read(int(44100*0.1))  # 读取0.1秒数据
         out.write(data)
 ```
 
