@@ -6,4 +6,4 @@
 
 ## 2025/7/26
 1. [asyncio的特殊用法和坑](docs/asyncio的特殊用法和坑.md)
-
+2. [sounddevice录取和播放声音方法](docs/sounddevice录取和播放声音方法.md)
