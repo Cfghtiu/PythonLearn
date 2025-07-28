@@ -2,9 +2,7 @@
 
 包含很多用于自己学习和理解的项目和文章  
 从2025/7/26开始  
-这里也包含一些过去编写小项目，可通过[仓库](https://github.com/Cfghtiu/PythonLearn)查看
-
-长期更新文档：[哔哩哔哩技术视频或UP推荐](docs/哔哩哔哩技术视频或UP推荐.md)
+这里也包含一些过去编写小项目，可通过[仓库](https://github.com/xkgt/PythonLearn)查看
 
 ## 2025/7/28
 1. [使用yaml优雅的读取配置文件](docs/使用yaml优雅的读取配置文件.md)
