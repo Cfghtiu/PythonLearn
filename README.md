@@ -4,6 +4,9 @@
 从2025/7/26开始  
 这里也包含一些过去编写小项目，可通过[仓库](https://github.com/xkgt/PythonLearn)查看
 
+## 2025/7/30
+1. [通过Annotated给参数添加文档](docs/通过Annotated给参数添加文档.md)
+
 ## 2025/7/29
 1. [Python的常见装饰器](docs/Python的常见装饰器.md)
 2. [搜索-加载和重载模块](docs/搜索-加载和重载模块.md)
