@@ -2,6 +2,9 @@
 从2025/7/26开始  
 这里也包含一些过去编写小项目，可通过[仓库](https://github.com/xkgt/PythonLearn)查看
 
+## 2025/8/3
+- [第13期 - pydantic_ai快速使用AI](docs/pydantic_ai快速使用AI.md)
+
 ## 2025/8/2
 - [第12期 - 手动绘制一个立方体](docs/手动绘制一个立方体.md)
 
