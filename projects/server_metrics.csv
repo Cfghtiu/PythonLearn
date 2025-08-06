@@ -1,0 +1,5 @@
+server_id,timestamp,cpu_usage
+server1,2023-01-01 10:00:00,50
+server1,2023-01-01 10:05:00,60
+server2,2023-01-01 10:00:00,30
+server2,2023-01-01 10:05:00,40
